@@ -209,7 +209,7 @@
     }
 
     .front {
-      background: #ffffff url('./ProjectDirectory/resources/card_back.png') center center no-repeat; /* Clean white for card front */
+      background: #ffffff url('./card_back.png') center center no-repeat; /* Clean white for card front */
       background-size: cover;
     }
 
@@ -665,15 +665,15 @@
         // Create a fresh copy of the original cards and shuffle for a new game
         // We use a deep copy here to ensure the original 'cards' array is not modified
         this.cardsArray = $.merge([], [
-          { name: "card_1", img: "./ProjectDirectory/resources/card_1.png", id: 1 },
-          { name: "card_2", img: "./ProjectDirectory/resources/card_2.png", id: 2 },
-          { name: "card_3", img: "./ProjectDirectory/resources/card_3.png", id: 3 },
-          { name: "card_4", img: "./ProjectDirectory/resources/card_4.png", id: 4 },
-          { name: "card_5", img: "./ProjectDirectory/resources/card_5.png", id: 5 },
-          { name: "card_6", img: "./ProjectDirectory/resources/card_6.png", id: 6 },
-          { name: "card_7", img: "./ProjectDirectory/resources/card_7.png", id: 7 },
-          { name: "card_8", img: "./ProjectDirectory/resources/card_8.png", id: 8 },
-          { name: "card_9", img: "./ProjectDirectory/resources/card_9.png", id: 9 }
+          { name: "card_1", img: "./card_1.png", id: 1 },
+          { name: "card_2", img: "./card_2.png", id: 2 },
+          { name: "card_3", img: "./card_3.png", id: 3 },
+          { name: "card_4", img: "./card_4.png", id: 4 },
+          { name: "card_5", img: "./card_5.png", id: 5 },
+          { name: "card_6", img: "./card_6.png", id: 6 },
+          { name: "card_7", img: "./card_7.png", id: 7 },
+          { name: "card_8", img: "./card_8.png", id: 8 },
+          { name: "card_9", img: "./card_9.png", id: 9 }
         ]);
         this.cardsArray = $.merge(this.cardsArray, this.cardsArray); // Duplicate for pairs
         this.shuffleCards(this.cardsArray); // Shuffle this fresh copy
@@ -847,15 +847,15 @@
   };
 
   var cards = [
-    { name: "card_1", img: "./ProjectDirectory/resources/card_1.png", id: 1 },
-    { name: "card_2", img: "./ProjectDirectory/resources/card_2.png", id: 2 },
-    { name: "card_3", img: "./ProjectDirectory/resources/card_3.png", id: 3 },
-    { name: "card_4", img: "./ProjectDirectory/resources/card_4.png", id: 4 },
-    { name: "card_5", img: "./ProjectDirectory/resources/card_5.png", id: 5 },
-    { name: "card_6", img: "./ProjectDirectory/resources/card_6.png", id: 6 },
-    { name: "card_7", img: "./ProjectDirectory/resources/card_7.png", id: 7 },
-    { name: "card_8", img: "./ProjectDirectory/resources/card_8.png", id: 8 },
-    { name: "card_9", img: "./ProjectDirectory/resources/card_9.png", id: 9 }
+    { name: "card_1", img: "./card_1.png", id: 1 },
+    { name: "card_2", img: "./card_2.png", id: 2 },
+    { name: "card_3", img: "./card_3.png", id: 3 },
+    { name: "card_4", img: "./card_4.png", id: 4 },
+    { name: "card_5", img: "./card_5.png", id: 5 },
+    { name: "card_6", img: "./card_6.png", id: 6 },
+    { name: "card_7", img: "./card_7.png", id: 7 },
+    { name: "card_8", img: "./card_8.png", id: 8 },
+    { name: "card_9", img: "./card_9.png", id: 9 }
   ];
 
   Memory.init(cards);
