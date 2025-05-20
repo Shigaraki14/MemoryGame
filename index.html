@@ -483,22 +483,21 @@
 
     /* Gift Box Styling */
     #gift-box {
-      width: 200px; /* Size of the gift box */
-      height: 200px;
-      /* Updated background-image to the provided URL */
-      background: url('./gift1.png');
-      background-size: contain; /* Use 'contain' to ensure the whole image is visible */
-      background-repeat: no-repeat; /* Prevent repeating */
-      background-position: center;
-      cursor: pointer;
-      border: none !important;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-      display: flex; /* Use flex to center content if any */
-      justify-content: center;
-      align-items: center;
-      margin: 50px auto; /* Center it */
-    }
+  width: 200px;
+  height: 200px;
+  background: url('./gift1.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  box-shadow: none; /* Optional: remove if you don’t want any shadow */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  cursor: pointer;
+}
+
 
     /* Enhanced Animation for unwrapping the gift box */
     @keyframes unwrap {
