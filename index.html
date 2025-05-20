@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Shailja 🎉</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* style.css content starts here */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa; /* Original very light blue-grey background */
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-y: auto; /* Allow vertical scrolling */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      position: relative; /* Needed for confetti positioning */
+    }
+
+    /* Confetti Container */
+    .confetti-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none; /* Allow clicks through */
+      z-index: -1; /* Ensure it stays behind content */
+    }
+
+    /* Confetti Pieces */
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff0000; /* Default color, overridden by nth-child */
+      opacity: 0;
+      animation: fall 5s linear infinite; /* Base animation */
+      border-radius: 50%; /* Make them circular by default */
+    }
+
+    /* Varying colors and shapes for confetti */
+    .confetti-piece:nth-child(3n+0) { background-color: #ff69b4; border-radius: 0; } /* Hot Pink */
+    .confetti-piece:nth-child(3n+1) { background-color: #8a2be2; border-radius: 50%; } /* Blue Violet */
+    .confetti-piece:nth-child(3n+2) { background-color: #32cd32; border-radius: 2px; } /* Lime Green */
+    .confetti-piece:nth-child(5n+0) { background-color: #ffd700; } /* Gold */
+    .confetti-piece:nth-child(7n+0) { background-color: #00bfff; } /* Deep Sky Blue */
+    .confetti-piece:nth-child(11n+0) { background-color: #ff4500; } /* Orange Red */
+    .confetti-piece:nth-child(13n+0) { background-color: #9370db; } /* Medium Purple */
+    .confetti-piece:nth-child(17n+0) { background-color: #00fa9a; } /* Medium Spring Green */
+
+    /* Animation for falling confetti */
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotateZ(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Apply random delays and durations to confetti pieces */
+    .confetti-piece:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 4s; }
+    .confetti-piece:nth-child(2) { left: 10%; animation-delay: 0.5s; animation-duration: 6s; }
+    .confetti-piece:nth-child(3) { left: 15%; animation-delay: 1s; animation-duration: 5s; }
+    .confetti-piece:nth-child(4) { left: 20%; animation-delay: 1.5s; animation-duration: 7s; }
+    .confetti-piece:nth-child(5) { left: 25%; animation-delay: 2s; animation-duration: 4.5s; }
+    .confetti-piece:nth-child(6) { left: 30%; animation-delay: 2.5s; animation-duration: 6.5s; }
+    .confetti-piece:nth-child(7) { left: 35%; animation-delay: 3s; animation-duration: 5.5s; }
+    .confetti-piece:nth-child(8) { left: 40%; animation-delay: 3.5s; animation-duration: 7.5s; }
+    .confetti-piece:nth-child(9) { left: 45%; animation-delay: 4s; animation-duration: 4s; }
+    .confetti-piece:nth-child(10) { left: 50%; animation-delay: 4.5s; animation-duration: 6s; }
+    .confetti-piece:nth-child(11) { left: 55%; animation-delay: 5s; animation-duration: 5s; }
+    .confetti-piece:nth-child(12) { left: 60%; animation-delay: 5.5s; animation-duration: 7s; }
+    .confetti-piece:nth-child(13) { left: 65%; animation-delay: 6s; animation-duration: 4.5s; }
+    .confetti-piece:nth-child(14) { left: 70%; animation-delay: 6.5s; animation-duration: 6.5s; }
+    .confetti-piece:nth-child(15) { left: 75%; animation-delay: 7s; animation-duration: 5.5s; }
+    .confetti-piece:nth-child(16) { left: 80%; animation-delay: 7.5s; animation-duration: 7.5s; }
+    .confetti-piece:nth-child(17) { left: 85%; animation-delay: 8s; animation-duration: 4s; }
+    .confetti-piece:nth-child(18) { left: 90%; animation-delay: 8.5s; animation-duration: 6s; }
+    .confetti-piece:nth-child(19) { left: 95%; animation-delay: 9s; animation-duration: 5s; }
+    .confetti-piece:nth-child(20) { left: 2%; animation-delay: 0.2s; animation-duration: 5.2s; }
+    .confetti-piece:nth-child(21) { left: 7%; animation-delay: 0.7s; animation-duration: 6.2s; }
+    .confetti-piece:nth-child(22) { left: 12%; animation-delay: 1.2s; animation-duration: 5.2s; }
+    .confetti-piece:nth-child(23) { left: 17%; animation-delay: 1.7s; animation-duration: 7.2s; }
+    .confetti-piece:nth-child(24) { left: 22%; animation-delay: 2.2s; animation-duration: 4.7s; }
+    .confetti-piece:nth-child(25) { left: 27%; animation-delay: 2.7s; animation-duration: 6.7s; }
+    .confetti-piece:nth-child(26) { left: 32%; animation-delay: 3.2s; animation-duration: 5.7s; }
+    .confetti-piece:nth-child(27) { left: 37%; animation-delay: 3.7s; animation-duration: 7.7s; }
+    .confetti-piece:nth-child(28) { left: 42%; animation-delay: 4.2s; animation-duration: 4.2s; }
+    .confetti-piece:nth-child(29) { left: 47%; animation-delay: 4.7s; animation-duration: 6.2s; }
+    .confetti-piece:nth-child(30) { left: 52%; animation-delay: 5.2s; animation-duration: 5.2s; }
+    .confetti-piece:nth-child(31) { left: 57%; animation-delay: 5.7s; animation-duration: 7.2s; }
+    .confetti-piece:nth-child(32) { left: 62%; animation-delay: 6.2s; animation-duration: 4.7s; }
+    .confetti-piece:nth-child(33) { left: 67%; animation-delay: 6.7s; animation-duration: 6.7s; }
+    .confetti-piece:nth-child(34) { left: 72%; animation-delay: 7.2s; animation-duration: 5.7s; }
+    .confetti-piece:nth-child(35) { left: 77%; animation-delay: 7.7s; animation-duration: 7.7s; }
+    .confetti-piece:nth-child(36) { left: 82%; animation-delay: 8.2s; animation-duration: 4.2s; }
+    .confetti-piece:nth-child(37) { left: 87%; animation-delay: 8.7s; animation-duration: 6.2s; }
+    .confetti-piece:nth-child(38) { left: 92%; animation-delay: 9.2s; animation-duration: 5.2s; }
+    .confetti-piece:nth-child(39) { left: 97%; animation-delay: 9.7s; animation-duration: 7.2s; }
+    .confetti-piece:nth-child(40) { left: 3%; animation-delay: 0.1s; animation-duration: 4.8s; }
+    .confetti-piece:nth-child(41) { left: 8%; animation-delay: 0.6s; animation-duration: 6.8s; }
+    .confetti-piece:nth-child(42) { left: 13%; animation-delay: 1.1s; animation-duration: 5.8s; }
+    .confetti-piece:nth-child(43) { left: 18%; animation-delay: 1.6s; animation-duration: 7.8s; }
+    .confetti-piece:nth-child(44) { left: 23%; animation-delay: 2.1s; animation-duration: 4.3s; }
+    .confetti-piece:nth-child(45) { left: 28%; animation-delay: 2.6s; animation-duration: 6.3s; }
+    .confetti-piece:nth-child(46) { left: 33%; animation-delay: 3.1s; animation-duration: 5.3s; }
+    .confetti-piece:nth-child(47) { left: 38%; animation-delay: 3.6s; animation-duration: 7.3s; }
+    .confetti-piece:nth-child(48) { left: 43%; animation-delay: 4.1s; animation-duration: 4.1s; }
+    .confetti-piece:nth-child(49) { left: 48%; animation-delay: 4.6s; animation-duration: 6.1s; }
+    .confetti-piece:nth-child(50) { left: 53%; animation-delay: 5.1s; animation-duration: 5.1s; }
+
+
+    /* Navbar (Header) */
+    header {
+      background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%); /* Soft purple to pink gradient */
+      color: #fff; /* White text for better contrast */
+      padding: 25px; /* Slightly more padding */
+      text-align: center;
+      font-size: 2.2em; /* Slightly larger font */
+      font-family: 'Pacifico', cursive;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger, more noticeable shadow */
+      position: relative; /* Changed from sticky to relative */
+      z-index: 0; /* Ensure it's behind the game content when blurred */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Added text shadow for pop */
+      transition: filter 0.5s ease-in-out; /* Smooth transition for blur effect */
+    }
+
+    /* Class for blurring the header and footer */
+    .header-blurred {
+        filter: blur(2px); /* Apply blur effect */
+    }
+
+    /* Game container */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column; /* Allow content to stack vertically */
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: content; /* Allow main to grow with content */
+      position: relative; /* To control z-index relative to header */
+      z-index: 1; /* Ensure main content is in front of the header */
+    }
+
+    .wrap {
+      max-width: 360px;
+      width: 100%;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      transition: all 0.3s ease;
+      display: flex; /* Use flexbox to arrange gifts */
+      flex-direction: column; /* Stack gifts vertically */
+      align-items: center; /* Center gifts horizontally */
+      justify-content: center; /* Center gifts vertically */
+      min-height: 400px; /* Ensure enough space for gifts and message */
+    }
+
+    .game {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .card {
+      perspective: 1000px;
+      cursor: pointer;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .inside {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .inside.picked,
+    .inside.matched {
+      transform: rotateY(180deg);
+      cursor: default;
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .front {
+      background: #ffffff url('./ProjectDirectory/resources/card_back.png') center center no-repeat; /* Clean white for card front */
+      background-size: cover;
+    }
+
+    .back {
+      background: #f0f8ff; /* Alice Blue for card back, complements header */
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(161, 140, 209, 0.7); /* Deeper transparent purple from gradient */
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px 40px;
+      text-align: center;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      display: flex; /* Use flexbox for internal layout */
+      flex-direction: column;
+      align-items: center;
+      position: relative; /* For close button positioning */
+    }
+
+    .modal h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+      color: #6a0572; /* Deep purple from the header gradient */
+    }
+
+    .modal button { /* General button styling for modal */
+      background: linear-gradient(to right, #fbc2eb 0%, #a18cd1 100%);
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease; /* Added transform transition */
+      margin: 10px 0; /* Margin for spacing between buttons/elements */
+    }
+
+    .modal button:hover {
+      background: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    .modal .option-buttons {
+        display: flex; /* Make Yes/No buttons appear in a row */
+        justify-content: center;
+        width: 100%; /* Take full width to center buttons */
+        margin-top: 10px; /* Space from prompt button */
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+    }
+
+    .modal .option-buttons button {
+        margin: 5px 10px; /* Adjusted margin for better spacing */
+    }
+
+    .modal .secret-code-container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal .secret-code-container p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        color: #555;
+    }
+
+    .modal .secret-code-container input[type="password"] { /* Targeting password type specifically */
+        padding: 12px 25px; /* Match button padding for height */
+        border: 2px solid;
+        border-image: linear-gradient(to right, #a18cd1, #fbc2eb) 1; /* Gradient border */
+        border-radius: 30px; /* Match button border-radius */
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+        transition: all 0.3s ease;
+        outline: none;
+        width: auto; /* Allow content to dictate width */
+        min-width: 200px; /* Ensure a minimum width */
+        max-width: 280px; /* Set a max-width to prevent it from getting too wide */
+        display: block;
+        color: #333;
+        background-color: #fcfcfc; /* Slightly off-white background */
+    }
+
+    .modal .secret-code-container input[type="password"]::placeholder {
+        color: #a18cd1; /* Placeholder color matching theme */
+        opacity: 0.7;
+    }
+
+    .modal .secret-code-container input[type="password"]:focus {
+        border-image: linear-gradient(to right, #fbc2eb, #a18cd1) 1; /* Reverse gradient on focus */
+        box-shadow: 0 0 15px rgba(161, 140, 209, 0.7); /* Glow effect with theme color */
+    }
+
+    .modal .error-message {
+        color: #ff4500; /* Orange Red */
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+
+    .modal .close-button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      color: #888;
+      cursor: pointer;
+      padding: 5px;
+      transition: color 0.2s ease;
+    }
+
+    .modal .close-button:hover {
+      color: #333;
+    }
+
+
+    /* Final Birthday Modal */
+    .final-birthday-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 105, 180, 0.8); /* Hot Pink transparent */
+      display: none; /* Hidden by default */
+      align-items: center;
+      justify-content: center;
+      z-index: 1001; /* Above other modals */
+    }
+
+    .final-birthday-modal .modal-content {
+      background: #fff;
+      border-radius: 20px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      transform: scale(0.8); /* Initial scale for pop-in effect */
+      animation: popIn 0.5s forwards;
+      position: relative; /* For close button positioning */
+    }
+
+    .final-birthday-modal h2 {
+      font-size: 2.5em;
+      color: #ff69b4; /* Hot Pink */
+      margin-bottom: 25px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .final-birthday-modal .close-button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      color: #888;
+      cursor: pointer;
+      padding: 5px;
+      transition: color 0.2s ease;
+    }
+
+    .final-birthday-modal .close-button:hover {
+      color: #333;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 400px) {
+      .wrap {
+        max-width: 100%;
+      }
+      .modal, .final-birthday-modal .modal-content {
+        padding: 20px;
+      }
+      .modal h2, .final-birthday-modal h2 {
+        font-size: 1.5em;
+      }
+      .modal button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+      .modal .option-buttons button {
+        margin: 0 5px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #e6e6fa; /* Light lavender for footer */
+      padding: 15px;
+      color: #6a0572; /* Deep purple for footer text */
+      font-size: 1em;
+      font-family: 'Pacifico', cursive;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.05); /* Subtle shadow at the top */
+      transition: filter 0.5s ease-in-out; /* Smooth transition for blur effect */
+    }
+
+    /* Start Game Button specific styles */
+    .game-control-button { /* Combined style for both start and play again */
+        display: block; /* Ensure it's a block element for centering */
+        margin: 50px auto; /* Center the button and add some top margin */
+        padding: 15px 30px; /* Slightly larger padding for a prominent button */
+        font-size: 1.2em; /* Larger font size */
+        background: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%); /* Matching gradient */
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+        transition: all 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    }
+
+    .game-control-button:hover {
+        transform: translateY(-3px); /* Lift effect on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+        background: linear-gradient(to right, #fbc2eb 0%, #a18cd1 100%); /* Reverse gradient on hover */
+    }
+
+    /* Pop animation for buttons */
+    @keyframes buttonPop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    .game-control-button.pop-animation {
+        animation: buttonPop 0.3s ease-out;
+    }
+
+    /* Hide game initially */
+    .game-hidden {
+        display: none;
+    }
+
+    /* Gift Box Styling */
+    .gift-box-item { /* Changed from #gift-box to .gift-box-item */
+      width: 150px; /* Adjust size for three gifts */
+      height: 150px;
+      background-image: url('./ProjectDirectory/resources/gift1.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      background-color: transparent; /* Make the div transparent */
+      border-radius: 0; /* Remove border-radius */
+      box-shadow: none; /* Remove box-shadow */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px; /* Margin between gifts */
+      /* Combined animations: drop-in first, then shake-slow */
+      animation: drop-in 0.8s ease-out forwards, shake-slow 4s infinite ease-in-out;
+      opacity: 0; /* Start invisible for drop-in animation */
+      transform: translateY(-200px); /* Start off-screen for drop-in animation */
+    }
+
+    /* Enhanced Animation for unwrapping the gift box */
+    @keyframes unwrap {
+      0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+      25% {
+        transform: scale(1.1) rotate(10deg); /* Slightly larger scale and rotation */
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(0.9) rotate(-10deg); /* Shrink and rotate in opposite direction */
+        opacity: 0.5;
+      }
+      75% {
+        transform: scale(1.2) rotate(20deg); /* A final, larger "pop" out */
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(0) rotate(30deg); /* Disappear completely */
+        opacity: 0;
+      }
+    }
+
+    /* Drop-in animation for initial load */
+    @keyframes drop-in {
+        0% { transform: translateY(-200px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Slow shaking animation for gift boxes */
+    @keyframes shake-slow {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(2px, 1px) rotate(-1deg); }
+        50% { transform: translate(-1px, -2px) rotate(1deg); }
+        75% { transform: translate(1px, 2px) rotate(-0.5deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    /* Apply different animation delays to each gift box for staggered drop and shake */
+    .gift-box-item:nth-child(1) {
+        animation-delay: 0s, 0.8s; /* drop-in starts at 0s, shake-slow starts after drop-in (0.8s) */
+    }
+    .gift-box-item:nth-child(2) {
+        animation-delay: 0.2s, 1.0s; /* drop-in starts at 0.2s, shake-slow starts after its drop-in (0.2+0.8=1.0s) */
+    }
+    .gift-box-item:nth-child(3) {
+        animation-delay: 0.4s, 1.2s; /* drop-in starts at 0.4s, shake-slow starts after its drop-in (0.4+0.8=1.2s) */
+    }
+
+    .unwrapping {
+      animation: unwrap 0.8s forwards; /* Apply the animation */
+      pointer-events: none; /* Disable clicks during animation */
+    }
+
+    /* Container for the game controls (buttons) */
+    #game-controls-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Styles for the "Better luck next time" message */
+    #better-luck-message {
+        font-size: 1.5em;
+        color: #ff4500; /* Orange Red */
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        display: flex; /* Use flex to center content */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Space between text and image */
+        display: none; /* Hidden by default */
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    #better-luck-message.show {
+        opacity: 1;
+    }
+    #better-luck-message img {
+        max-width: 80px; /* Adjust size of the image */
+        height: auto;
+    }
+
+    /* Flex container for the three gift boxes */
+    #gift-boxes-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🎉 Happy Birthday Shailja 🎂
+</header>
+
+<main>
+  <div class="wrap">
+    <div id="gift-boxes-container">
+      <div id="gift-box-1" class="gift-box-item"></div>
+      <div id="gift-box-2" class="gift-box-item"></div>
+      <div id="gift-box-3" class="gift-box-item"></div>
+    </div>
+
+    <div id="better-luck-message">
+        <span>Better luck next time!</span>
+        <img src="./ProjectDirectory/resources/pingu.png" alt="Cross mark" onerror="this.onerror=null;this.src='https://placehold.co/80x80/FF0000/FFFFFF?text=X';">
+    </div>
+
+    <div id="game-controls-container" style="display: none;">
+      <button id="start-game-button" class="game-control-button">Start Game</button>
+      <button id="play-again-button" class="game-control-button" style="display: none;">Play Again</button>
+    </div>
+
+    <div class="game game-hidden"></div>
+    <div class="modal-overlay">
+      <div class="modal">
+        <button class="close-button" id="close-main-modal">&times;</button>
+        <h2 id="modal-title">You Rock!</h2>
+        <div id="yes-no-container" class="option-buttons" style="display: none;">
+            <h2>Here is a message for you, do you want to read it?</h2>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        </div>
+
+        <div id="secret-code-container" style="display: none;">
+            <p>Enter your secret code:</p>
+            <input type="password" id="secret-code-input" placeholder="Secret Code" />
+            <button id="submit-code-button">Submit</button>
+            <p id="secret-code-error" class="error-message" style="display: none;"></p>
+        </div>
+
+        <button class="restart">Play Again?</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="confetti-container">
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+  <span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span><span class="confetti-piece"></span>
+</div>
+
+<footer>
+  By Raghav 💖
+</footer>
+
+<div id="final-birthday-modal" class="final-birthday-modal">
+    <div class="modal-content">
+        <button class="close-button" id="close-birthday-modal">&times;</button>
+        <h2>Happy Birthday Shailja!</h2>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+(function(){
+  var Memory = {
+    init: function(cards){
+      this.$game = $(".game");
+      this.$modal = $(".modal");
+      this.$overlay = $(".modal-overlay");
+      this.$restartButton = $("button.restart"); // This is the 'Play Again?' button inside the modal
+      this.$modalTitle = $("#modal-title");
+
+      // New elements for the message feature
+      this.$yesNoContainer = $("#yes-no-container");
+      this.$yesButton = $("#yes-button");
+      this.$noButton = $("#no-button");
+      this.$secretCodeContainer = $("#secret-code-container");
+      this.$secretCodeInput = $("#secret-code-input");
+      this.$submitCodeButton = $("#submit-code-button");
+      this.$secretCodeError = $("#secret-code-error");
+      this.$finalBirthdayModal = $("#final-birthday-modal");
+      this.$closeBirthdayModalButton = $("#close-birthday-modal");
+      this.$closeMainModalButton = $("#close-main-modal");
+      this.$startGameButton = $("#start-game-button"); // The initial start button
+      this.$playAgainOuterButton = $("#play-again-button"); // The new 'Play Again' button outside the modal
+      this.$header = $("header"); // Reference to the header element
+      this.$footer = $("footer"); // Reference to the footer element
+
+      // New elements for multiple gift boxes
+      this.$giftBoxes = $(".gift-box-item"); // All gift box elements
+      this.$giftBoxesContainer = $("#gift-boxes-container"); // Container for gift boxes
+      this.$betterLuckMessage = $("#better-luck-message"); // "Better luck next time" message
+      this.$gameControlsContainer = $("#game-controls-container"); // Reference to the container for game buttons
+
+      this.cardsArray = $.merge(cards, cards); // 9 cards * 2 = 18
+      this.gameStartedOnce = false; // Flag to track if the game has been launched at least once
+      this.correctGiftIndex = -1; // Index of the gift box that hides the start game button
+
+      this.binding();
+      this.initialSetup();
+    },
+
+    initialSetup: function() {
+        this.$game.addClass('game-hidden'); // Hide the game initially
+        this.$gameControlsContainer.hide(); // Hide the game control buttons initially
+        this.$header.removeClass('header-blurred'); // Ensure header is not blurred initially
+        this.$footer.removeClass('header-blurred'); // Ensure footer is not blurred initially
+        this.$betterLuckMessage.hide().removeClass('show'); // Hide and reset message
+
+        // Show all gift boxes and randomize the correct one
+        this.$giftBoxes.show().removeClass('unwrapping'); // Ensure all gifts are visible and not animating
+        this.$giftBoxesContainer.show(); // Show the container for gifts
+        this.randomizeCorrectGift();
+    },
+
+    randomizeCorrectGift: function() {
+        this.correctGiftIndex = Math.floor(Math.random() * this.$giftBoxes.length); // Randomly pick 0, 1, or 2
+        console.log("Correct gift index:", this.correctGiftIndex); // For debugging
+    },
+
+    startGame: function() {
+        // Add pop animation to the clicked button
+        $(event.target).addClass('pop-animation');
+        // Remove the animation class after it completes
+        $(event.target).one('animationend', function() {
+            $(this).removeClass('pop-animation');
+        });
+
+        this.$gameControlsContainer.hide(); // Hide the game control buttons
+        this.$game.removeClass('game-hidden'); // Ensure game is visible by removing the class
+        this.$game.css({ 'display': 'grid', 'opacity': 1 }); // Explicitly set display and opacity
+        this.$header.addClass('header-blurred'); // Apply blur to header when game starts
+        this.$footer.addClass('header-blurred'); // Apply blur to footer when game starts
+
+        // Set flag to true after the first launch
+        this.gameStartedOnce = true;
+
+        // Create a fresh copy of the original cards and shuffle for a new game
+        // We use a deep copy here to ensure the original 'cards' array is not modified
+        this.cardsArray = $.merge([], [
+          { name: "card_1", img: "./ProjectDirectory/resources/card_1.png", id: 1 },
+          { name: "card_2", img: "./ProjectDirectory/resources/card_2.png", id: 2 },
+          { name: "card_3", img: "./ProjectDirectory/resources/card_3.png", id: 3 },
+          { name: "card_4", img: "./ProjectDirectory/resources/card_4.png", id: 4 },
+          { name: "card_5", img: "./ProjectDirectory/resources/card_5.png", id: 5 },
+          { name: "card_6", img: "./ProjectDirectory/resources/card_6.png", id: 6 },
+          { name: "card_7", img: "./ProjectDirectory/resources/card_7.png", id: 7 },
+          { name: "card_8", img: "./ProjectDirectory/resources/card_8.png", id: 8 },
+          { name: "card_9", img: "./ProjectDirectory/resources/card_9.png", id: 9 }
+        ]);
+        this.cardsArray = $.merge(this.cardsArray, this.cardsArray); // Duplicate for pairs
+        this.shuffleCards(this.cardsArray); // Shuffle this fresh copy
+        this.setup(); // Build HTML and reset game variables
+    },
+
+    shuffleCards: function(cardsArray){
+      this.$cards = $(this.shuffle(cardsArray));
+    },
+
+    setup: function(){
+      this.html = this.buildHTML();
+      this.$game.html(this.html);
+      this.$memoryCards = $(".card");
+      this.paused = false;
+      this.guess = null;
+      this.$memoryCards.off("click").on("click", this.cardClicked);
+    },
+
+    binding: function(){
+      this.$giftBoxes.on("click", $.proxy(this.handleGiftClick, this)); // Bind a single handler to all gifts
+      this.$startGameButton.on("click", $.proxy(this.startGame, this));
+      this.$playAgainOuterButton.on("click", $.proxy(this.startGame, this)); // Bind outer play again button to startGame
+      this.$restartButton.on("click", $.proxy(this.reset, this)); // This is the 'Play Again?' button inside the modal
+      this.$yesButton.on("click", $.proxy(this.handleYesNo, this, true));
+      this.$noButton.on("click", $.proxy(this.handleYesNo, this, false));
+      this.$submitCodeButton.on("click", $.proxy(this.checkSecretCode, this));
+      this.$closeBirthdayModalButton.on("click", $.proxy(this.closeFinalBirthdayModalAndReset, this));
+      this.$closeMainModalButton.on("click", $.proxy(this.reset, this));
+    },
+
+    handleGiftClick: function(event) {
+        const clickedGift = $(event.currentTarget); // Get the clicked gift element
+        const clickedIndex = this.$giftBoxes.index(clickedGift); // Get its index
+
+        this.$giftBoxes.css('pointer-events', 'none'); // Disable clicks on all gifts during animation
+        this.$giftBoxes.removeClass('shake-slow'); // Stop shaking animation on all gifts
+
+        clickedGift.addClass('unwrapping'); // Trigger unwrapping animation on the clicked gift
+
+        setTimeout(function() {
+            this.$giftBoxes.hide().removeClass('unwrapping'); // Hide all gifts after animation
+            this.$giftBoxesContainer.hide(); // Hide the container as well
+
+            if (clickedIndex === this.correctGiftIndex) {
+                this.$gameControlsContainer.show(); // Show the game control buttons
+                if (this.gameStartedOnce) {
+                    this.$startGameButton.hide();
+                    this.$playAgainOuterButton.show();
+                } else {
+                    this.$startGameButton.show();
+                    this.$playAgainOuterButton.hide();
+                }
+            } else {
+                this.$betterLuckMessage.show().addClass('show'); // Show "Better luck next time"
+                setTimeout(function() {
+                    this.$betterLuckMessage.removeClass('show').hide(); // Hide message
+                    this.$giftBoxes.show(); // Show all gifts again
+                    this.$giftBoxesContainer.show(); // Show the container again
+                    this.$giftBoxes.css('pointer-events', 'auto'); // Re-enable clicks
+                    this.$giftBoxes.addClass('shake-slow'); // Re-apply shaking animation
+                    this.randomizeCorrectGift(); // Randomize correct gift for the next try
+                }.bind(this), 1500); // Display message for 1.5 seconds
+            }
+        }.bind(this), 800); // Match timeout to unwrap animation duration
+    },
+
+    cardClicked: function(){
+      var _ = Memory;
+      var $card = $(this);
+      if(!_.paused && !$card.find(".inside").hasClass("matched") && !$card.find(".inside").hasClass("picked")){
+        $card.find(".inside").addClass("picked");
+        if(!_.guess){
+          _.guess = $(this).attr("data-id");
+        } else if(_.guess == $(this).attr("data-id") && !$(this).hasClass("picked")){
+          $(".picked").addClass("matched");
+          _.guess = null;
+        } else {
+          _.guess = null;
+          _.paused = true;
+          setTimeout(function(){
+            $(".picked").removeClass("picked");
+            Memory.paused = false;
+          }, 600);
+        }
+        if($(".matched").length == $(".card").length){
+          _.win();
+        }
+      }
+    },
+
+    win: function(){
+      this.paused = true;
+      setTimeout(function(){
+        Memory.showModal();
+        Memory.$modalTitle.text("You Rock!");
+        Memory.$restartButton.hide(); // Hide the 'Play Again?' button inside the modal initially
+        Memory.$yesNoContainer.show(); // Show the message prompt and Yes/No buttons
+        Memory.$secretCodeContainer.hide();
+        Memory.$secretCodeInput.val('');
+        Memory.$secretCodeError.hide();
+        Memory.$finalBirthdayModal.hide();
+        this.$game.fadeOut(); // Fade out the game board
+      }.bind(this), 1000); // Bind 'this' to the setTimeout callback
+    },
+
+    showModal: function(){
+      this.$overlay.show();
+      this.$modal.fadeIn("slow");
+    },
+
+    hideModal: function(){
+      this.$overlay.hide();
+      this.$modal.hide();
+      this.$finalBirthdayModal.hide();
+    },
+
+    closeFinalBirthdayModalAndReset: function() {
+        this.hideModal();
+        this.reset();
+    },
+
+    reset: function(){
+      this.hideModal();
+      this.$game.addClass('game-hidden'); // Hide game when resetting
+      this.$game.empty(); // Clear existing cards HTML to ensure a fresh start
+      this.paused = false; // Reset game state
+      this.guess = null; // Reset guess
+      this.$header.removeClass('header-blurred'); // Remove blur from header when resetting
+      this.$footer.removeClass('header-blurred'); // Remove blur from footer when resetting
+
+      // Show the gift boxes and hide game controls
+      this.$giftBoxes.show().removeClass('unwrapping'); // Show all gifts
+      this.$giftBoxesContainer.show(); // Show the container for gifts
+      this.$gameControlsContainer.hide(); // Hide game controls
+      this.$betterLuckMessage.hide().removeClass('show'); // Hide and reset message
+      this.$giftBoxes.css('pointer-events', 'auto'); // Re-enable clicks on gifts
+      this.$giftBoxes.addClass('shake-slow'); // Re-apply shaking animation
+      this.randomizeCorrectGift(); // Randomize correct gift for the next try
+    },
+
+    handleYesNo: function(wantsMessage) {
+        if (wantsMessage) {
+            this.$yesNoContainer.hide();
+            this.$secretCodeContainer.show();
+            this.$secretCodeInput.val('');
+            this.$secretCodeError.hide();
+        } else {
+            this.reset(); // If 'No', reset the game
+        }
+    },
+
+    checkSecretCode: function() {
+        const secretCode = this.$secretCodeInput.val().trim();
+        const correctCode = "1234";
+
+        if (secretCode === correctCode) {
+            this.$secretCodeContainer.hide();
+            this.$modal.hide();
+            this.$overlay.hide();
+            this.$finalBirthdayModal.show();
+        } else {
+            this.$secretCodeError.text("Incorrect code. Please try again.").show();
+        }
+    },
+
+    shuffle: function(array){
+      var counter = array.length, temp, index;
+      while (counter > 0) {
+        index = Math.floor(Math.random() * counter);
+        counter--;
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+      }
+      return array;
+    },
+
+    buildHTML: function(){
+      var frag = '';
+      this.$cards.each(function(k, v){
+        frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
+        <div class="front"></div>\
+        <div class="back"><img src="'+ v.img +'" alt="'+ v.name +'" /></div></div>\
+        </div>';
+      });
+      return frag;
+    }
+  };
+
+  var cards = [
+    { name: "card_1", img: "./ProjectDirectory/resources/card_1.png", id: 1 },
+    { name: "card_2", img: "./ProjectDirectory/resources/card_2.png", id: 2 },
+    { name: "card_3", img: "./ProjectDirectory/resources/card_3.png", id: 3 },
+    { name: "card_4", img: "./ProjectDirectory/resources/card_4.png", id: 4 },
+    { name: "card_5", img: "./ProjectDirectory/resources/card_5.png", id: 5 },
+    { name: "card_6", img: "./ProjectDirectory/resources/card_6.png", id: 6 },
+    { name: "card_7", img: "./ProjectDirectory/resources/card_7.png", id: 7 },
+    { name: "card_8", img: "./ProjectDirectory/resources/card_8.png", id: 8 },
+    { name: "card_9", img: "./ProjectDirectory/resources/card_9.png", id: 9 }
+  ];
+
+  Memory.init(cards);
+})();
+</script>
+
+</body>
+</html>
