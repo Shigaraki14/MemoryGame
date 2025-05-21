@@ -798,14 +798,14 @@
             // Create a fresh copy of the original cards and shuffle for a new game
             this.cardsArray = $.merge([], [
                 { name: "card_1", img: "./card_1.png", id: 1 },
-/*                { name: "card_2", img: "./card_2.png", id: 2 },
+                { name: "card_2", img: "./card_2.png", id: 2 },
                 { name: "card_3", img: "./card_3.png", id: 3 },
                 { name: "card_4", img: "./card_4.png", id: 4 },
                 { name: "card_5", img: "./card_5.png", id: 5 },
                 { name: "card_6", img: "./card_6.png", id: 6 },
                 { name: "card_7", img: "./card_7.png", id: 7 },
                 { name: "card_8", img: "./card_8.png", id: 8 },
-                { name: "card_9", img: "./card_9.png", id: 9 }*/
+                { name: "card_9", img: "./card_9.png", id: 9 }
             ]);
             this.cardsArray = $.merge(this.cardsArray, this.cardsArray); // Duplicate for pairs
             this.shuffleCards(this.cardsArray); // Shuffle this fresh copy
@@ -950,7 +950,7 @@
 
     checkSecretCode: function() {
         const secretCode = this.$secretCodeInput.val().trim();
-        const correctCode = "1234";
+        const correctCode = "pineapple";
 
         if (secretCode === correctCode) {
             this.$secretCodeContainer.hide();
