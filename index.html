@@ -82,7 +82,7 @@
     .confetti-piece:nth-child(5) { left: 25%; animation-delay: 2s; animation-duration: 4.5s; }
     .confetti-piece:nth-child(6) { left: 30%; animation-delay: 2.5s; animation-duration: 6.5s; }
     .confetti-piece:nth-child(7) { left: 35%; animation-delay: 3s; animation-duration: 5.5s; }
-    .confetti-piece:nth-child(8) { left: 40%; animation-delay: 3.5s; animation-duration: 7.5s; }
+    .confetti-piece:nth-child(8) { left: 40%; animation-delay: 3.5s; animation-duration: 7s; }
     .confetti-piece:nth-child(9) { left: 45%; animation-delay: 4s; animation-duration: 4s; }
     .confetti-piece:nth-child(10) { left: 50%; animation-delay: 4.5s; animation-duration: 6s; }
     .confetti-piece:nth-child(11) { left: 55%; animation-delay: 5s; animation-duration: 5s; }
@@ -357,22 +357,22 @@
         box-shadow: 0 0 15px rgba(161, 140, 209, 0.7); /* Glow effect with theme color */
     }
     #secret-code-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 14px 18px;
-  font-size: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s, box-shadow 0.3s;
-  outline: none;
-}
+      width: 100%;
+      max-width: 400px;
+      padding: 14px 18px;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+    }
 
-#secret-code-input:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-}
+    #secret-code-input:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
 
     .modal .error-message {
         color: #ff4500; /* Orange Red */
@@ -415,19 +415,45 @@
     .final-birthday-modal .modal-content {
       background: #fff;
       border-radius: 20px;
-      padding: 50px;
+      padding: 30px; /* Reduced padding slightly for more content space */
       text-align: center;
       box-shadow: 0 15px 30px rgba(0,0,0,0.3);
       transform: scale(0.8); /* Initial scale for pop-in effect */
       animation: popIn 0.5s forwards;
       position: relative; /* For close button positioning */
+      max-width: 90%; /* Ensure it's responsive */
+      overflow-y: auto; /* Allow scrolling for long messages */
+      max-height: 90vh; /* Limit height to viewport height */
+      display: flex; /* Use flexbox for internal layout */
+      flex-direction: column; /* Stack children vertically */
+      align-items: flex-start; /* ALIGN ALL CONTENT TO THE LEFT */
     }
 
     .final-birthday-modal h2 {
-      font-size: 2.5em;
+      font-size: 2em; /* Slightly reduced font size for better fit */
       color: #ff69b4; /* Hot Pink */
-      margin-bottom: 25px;
+      margin-bottom: 20px; /* Adjusted margin */
       font-family: 'Pacifico', cursive;
+      text-align: left; /* ENSURE TITLE IS LEFT ALIGNED */
+      word-break: break-word; /* Allow long words to break */
+      width: 100%; /* Take full width to respect left alignment */
+    }
+
+    .final-birthday-modal .birthday-message {
+        font-size: 1.2em; /* Slightly larger font */
+        line-height: 1.7; /* Increased line height for better readability */
+        color: #333; /* Darker text for better contrast */
+        font-family: 'Poppins', sans-serif;
+        margin-top: 15px; /* Adjusted margin from title */
+        white-space: pre-wrap;
+        text-align: left;
+        padding: 25px; /* Increased padding all around */
+        //background-color: #fcfcfc; /* Very light background for the message box */
+        background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%); /* Soft purple to pink gradient */
+        border-radius: 15px; /* Rounded corners for the message box */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Subtle shadow for a lifted effect */
+        max-width: 100%; /* Ensure it takes full width of its parent */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     .final-birthday-modal .close-button {
@@ -688,7 +714,17 @@
 <div id="final-birthday-modal" class="final-birthday-modal">
     <div class="modal-content">
         <button class="close-button" id="close-birthday-modal">&times;</button>
-        <h2>Happy Birthday Shailja!</h2>
+        <h2>Happy Birthday Shailja!❤️</h2>
+          <p class="birthday-message">Wishing you the happiest birthday ever!</p>
+          <p class="birthday-message">This 22nd May marks not just your special day, but also a beautiful milestone — 3 months of us. And honestly, life has changed for the better since the day we met.</p>
+          <p class="birthday-message">I love starting my mornings by messaging you, and I can’t sleep without our good night texts. That little call at 11? It's the highlight of my day — every day.</p>
+          <p class="birthday-message">I really wish I could be with you today to celebrate. But next year? It’s a promise.</p>
+          <p class="birthday-message">Thank you for all the adorable petnames, the sweet lingo I now use without thinking, and for being not just someone I love talking to, but someone I love learning with — whether it’s politics, society, or random science facts. Every conversation with you matters.</p>
+          <p class="birthday-message">Your presence means a lot to me.</p>
+          <p class="birthday-message">Here’s to many more birthdays together.</p>
+          <p class="birthday-message">Have the most amazing day, my favorite human. 🎂💫</p>
+          <p class="birthday-message">With all my love❤️,</p>
+          <p class="birthday-message">Your Khajoor</p>
     </div>
 </div>
 
@@ -850,7 +886,7 @@
       // Wait for the animation to complete before showing the modal and fading out
       this.$game.one('animationend', () => {
         Memory.showModal();
-        Memory.$modalTitle.text("You Rock!");
+        Memory.$modalTitle.text("Winner!");
         Memory.$restartButton.hide(); // Hide the 'Play Again?' button inside the modal initially
         Memory.$yesNoContainer.show(); // Show the message prompt and Yes/No buttons
         Memory.$secretCodeContainer.hide();
@@ -960,7 +996,6 @@
           { name: "card_7", img: "./card_7.png", id: 7 },
           { name: "card_8", img: "./card_8.png", id: 8 },
           { name: "card_9", img: "./card_9.png", id: 9 }
-
   ];
 
   Memory.init(cards);
